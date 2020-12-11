@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="aruco_tracker" pkg="aruco_ros" type="single">
+        <remap from="/camera_info" to="/camera/color/camera_info" />
+        <remap from="/image" to="/camera/color/image_raw" />
+        <param name="image_is_rectified" value="true"/>
+        <param name="marker_size"        value="0.1"/>
+        <param name="marker_id"          value="100"/>
+        <param name="reference_frame"    value="camera_color_frame"/>
+        <param name="camera_frame"       value="camera_color_frame"/>
+        <param name="marker_frame"       value="camera_marker" />
+    </node>
+</launch>

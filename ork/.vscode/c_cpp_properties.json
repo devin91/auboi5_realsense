@@ -1,0 +1,48 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/devin/aubo_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/devin/aubo_ws/src/aruco_ros/aruco/include",
+                "/home/devin/aubo_ws/src/aruco_ros/aruco_ros/include",
+                "/home/devin/aubo_ws/src/aubo_robot/aubo_controller/include",
+                "/home/devin/aubo_ws/src/aubo_robot/aubo_driver/include",
+                "/home/devin/aubo_ws/src/aubo_robot/aubo_kinematics/include",
+                "/home/devin/aubo_ws/src/aubo_robot/aubo_msgs/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_planners/chomp/chomp_motion_planner/include",
+                "/home/devin/aubo_ws/src/dh_gripper_ros/include",
+                "/home/devin/aubo_ws/src/ork/ecto/include",
+                "/home/devin/aubo_ws/src/ork/ecto_image_pipeline/include",
+                "/home/devin/aubo_ws/src/ork/ecto_pcl/include",
+                "/home/devin/aubo_ws/src/ork/ecto_ros/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_planners/chomp/chomp_interface/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_ros/benchmarks/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_plugins/moveit_ros_control_interface/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_ros/move_group/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_ros/robot_interaction/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_setup_assistant/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_plugins/moveit_simple_controller_manager/include",
+                "/home/devin/aubo_ws/src/ork/ork_core/include",
+                "/home/devin/aubo_ws/src/ork/ork_renderer/include",
+                "/home/devin/aubo_ws/src/ork/ork_ros/include",
+                "/home/devin/aubo_ws/src/ork/ork_tabletop/include",
+                "/home/devin/aubo_ws/src/ork/ork_transparent_objects/include",
+                "/home/devin/aubo_ws/src/ork/opencv_candidate/include",
+                "/home/devin/aubo_ws/src/moveit-0.9.15/moveit_planners/sbpl/core/sbpl_interface/include",
+                "/home/devin/aubo_ws/src/vision_visp/visp_bridge/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
