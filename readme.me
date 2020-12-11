@@ -1,0 +1,47 @@
+###############
+时间:2020-09-21
+###############
+
+aubo机械臂i5、realsense D435i、大寰AG-95识别抓取软件包操作步骤：
+----------------
+运行环境：
+系统:ubuntu 16.04
+ROS环境: ROS kinetic
+moveit版本:　0.9.15
+----------------
+1.安装ros依赖包
+‘sudo rosdep install --from-paths src --rosdistro kinetic　-y’
+
+2.安装realsense库
+参照https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md
+
+3.安装realsense ros软件包
+‘sudo apt-get install ros-kinetic-realsense* -y’
+
+4.编译软件包
+‘catkin_make -j1 -DCMAKE_BUILD_TYPE=RELEASE’
+注意：由于软件包过大，如果不指定-j1单线程编译容易导致内存爆掉，可以适当使用-j2/-j4来提高编译速度，-j1的编译时间大概是30分钟左右，请耐心等待。
+编译选项-DCMAKE_BUILD_TYPE=RELEASE是将工作包编译为RELEASE版本，这样识别程序的稳定性相对较好。
+
+5.手眼标定
+参照'~/aubo_ws/src/easy_handeye/README.md'
+
+6.添加标定结果
+在机械臂launch文件中添加如下语句发布标定结果：
+'<node pkg="tf" type="static_transform_publisher" name="camera_broadcaster" args="0.01703139872968774 0.06367679269212607 0.022449576060965877 -0.49984429725973745 -0.5026434417758587 -0.4962838460679254 0.5012061382990693 wrist3_Link camera_link 100" />'
+args的参数分别顺序是：x,y,z,qx,qy,qz,qw,父关节,子关节,发布频率
+
+7.运行demo
+a.运行机械臂
+'$ roslaunch aubo_i5_moveit_config moveit_planning_execution.launch sim:=false robot_ip:=192.168.12.102'
+b.运行相机
+'roslaunch realsense2_camera rs_camera.launch filters:=pointcloud'
+c.运行手抓程序
+'roslaunch dh_hand_driver dh_hand_controller.launch '
+d.运行检测程序
+‘roslaunch object_recognition_tabletop tabletop.launch’
+e.运行demo程序
+'rosrun aubo_demo grap_cycle'
+f.运行rviz观察
+‘rosrun rviz rviz -d $(rospack find aubo_demo)/rviz/demo.rviz’
+注意：运行每个程序之前都需要引入工作包的环境变量，如source ~/aubo_ws/devel/setup.bash
